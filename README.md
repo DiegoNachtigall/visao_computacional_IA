@@ -61,6 +61,8 @@ O projeto possui a seguinte estrutura:
 ## Como Utilizar
 
 1. **Modelo e Configuração:** O projeto usa o modelo SSD MobileNet V2 treinado com o conjunto de dados COCO. Certifique-se de que o arquivo `frozen_inference_graph.pb`, `ssd_mobilenet_v2_coco.pbtxt`, e `coco_labels.txt` estejam corretamente configurados.
+
+   **Modelo:** Baixe o modelo clicando [aqui](https://storage.googleapis.com/download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz), copie o arquivo `frozen_inference_graph.pb` para a pasta `/models`.
    
 2. **Executar o Código:** Para iniciar a detecção, execute o código no arquivo `main.py`. O sistema irá capturar uma foto dos animais detectados a cada 60 segundos.
 
