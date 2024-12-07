@@ -54,9 +54,11 @@ def main():
             for i in range(deteccoes.shape[2]):
                 confianca = deteccoes[0, 0, i, 2]
                 if confianca > 0.5:  # Apenas objetos com confiança acima de 50%
-                    classe_id = int(deteccoes[0, 0, i, 1])
-                    label = classes[classe_id]
-
+                    classe_id = int(deteccoes[0, 0, i, 1]) if i < deteccoes.shape[2] else 0
+                    if classe_id < len(classes):
+                        label = classes[classe_id]
+                    else:
+                        label = 'unknown'
                     # Verifica se é um animal (específico para classes relevantes)
                     if label in ['elephant', 'deer', 'bear', 'zebra', 'lion']:
                         (altura, largura) = frame.shape[:2]
@@ -70,7 +72,7 @@ def main():
                         
                         # Verifica o tempo desde a última foto
                         tempo_atual = time.time()
-                        if tempo_atual - ultima_foto_tempo >= 60:  # Verifica se 60 segundos se passaram
+                        if tempo_atual - ultima_foto_tempo >= 30:  # Verifica se 60 segundos se passaram
                             tirar_foto(frame, contador_fotos)
                             contador_fotos += 1
                             ultima_foto_tempo = tempo_atual
