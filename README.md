@@ -1,8 +1,10 @@
-# Projeto de Visão Computacional
+# Projeto de Visão Computacional para Detecção de Animais Selvagens
 
-Projeto criado para disciplina Fundamentos de Inteligência Artificial (FIA) - Graduação. Prof. Pablo De Chiaro
+Projeto desenvolvido para capturar imagens de animais selvagens em ambientes ao ar livre, utilizando visão computacional e modelos de detecção de objetos.
 
-Este projeto configura um ambiente virtual Python e instala as bibliotecas necessárias para um projeto de Visão Computacional.
+## Objetivo do Projeto
+
+O objetivo deste projeto é realizar a detecção de animais selvagens em vídeos ao vivo ou gravações de câmeras de vigilância ao ar livre. O sistema utiliza um modelo de deep learning (SSD MobileNet) para identificar animais específicos (como elefantes, cervos, ursos, zebras, e leões) e, ao detectar um animal, uma foto é capturada e salva automaticamente. O código foi ajustado para tirar apenas uma foto por minuto, evitando capturas repetidas de animais em sequência.
 
 ## Configuração do Ambiente Virtual
 
@@ -30,7 +32,7 @@ Este projeto configura um ambiente virtual Python e instala as bibliotecas neces
 
 ## Instalação de Dependências
 
-Certifique-se de que seu ambiente virtual esteja ativado. Instale as dependências listadas no arquivo `requirements.txt`:
+Após ativar o ambiente virtual, instale as dependências necessárias para o projeto com o seguinte comando:
 
 ```bash
 pip install -r requirements.txt
@@ -43,9 +45,36 @@ numpy==2.0.0
 opencv-python==4.10.0.84
 ```
 
+## Estrutura de Pastas
+
+O projeto possui a seguinte estrutura:
+
+```
+/projeto
+    /fotos                # Onde as fotos dos animais detectados são salvas
+    /models               # Contém os arquivos do modelo de detecção e configuração
+    /videos               # Vídeos para detecção
+    main.py               # Arquivo principal para execução do código
+    requirements.txt      # Dependências do projeto
+```
+
+## Como Utilizar
+
+1. **Modelo e Configuração:** O projeto usa o modelo SSD MobileNet V2 treinado com o conjunto de dados COCO. Certifique-se de que o arquivo `frozen_inference_graph.pb`, `ssd_mobilenet_v2_coco.pbtxt`, e `coco_labels.txt` estejam corretamente configurados.
+   
+2. **Executar o Código:** Para iniciar a detecção, execute o código no arquivo `main.py`. O sistema irá capturar uma foto dos animais detectados a cada 60 segundos.
+
+   ```bash
+   python main.py
+   ```
+
+   Certifique-se de substituir o caminho do vídeo no arquivo pelo vídeo que você deseja monitorar.
+
+3. **Verifique as Fotos:** As fotos serão salvas na pasta `/fotos` com o nome do arquivo incluindo a data e hora da captura.
+
 ## Verificação da Instalação
 
-Para verificar se as bibliotecas foram instaladas corretamente, você pode executar o seguinte comando em um terminal Python:
+Para verificar se as bibliotecas foram instaladas corretamente, você pode executar o seguinte código Python:
 
 ```python
 import cv2
@@ -55,13 +84,6 @@ print(f"OpenCV version: {cv2.__version__}")
 print(f"NumPy version: {np.__version__}")
 ```
 
-## Sugestão de Estudos por Diretórios
-
-1. vagas
-2. reconhecimento-faces (use primeiro o `verifica_cameras.py`)
-3. deteccao-objetos
-4. rastreio-pessoas
-
 ## Desativação do Ambiente Virtual
 
 Quando terminar de trabalhar no projeto, você pode desativar o ambiente virtual com o comando:
@@ -69,10 +91,3 @@ Quando terminar de trabalhar no projeto, você pode desativar o ambiente virtual
 ```bash
 deactivate
 ```
-
-## Referências e Leitura
-
-- (Ref) YoloV3: [yolov3](https://pjreddie.com/darknet/yolo/)
-- (Leitura) SSD MobileNet: [SSD MobileNetV2](https://arxiv.org/abs/1512.02325)
-- (Leitura) SSD MobileNet: [SSD MobileNetV2 Object Detection](https://medium.com/@techmayank2000/object-detection-using-ssd-mobilenetv2-using-tensorflow-api-can-detect-any-single-class-from-31a31bbd0691)
-- (Ref) COCO: [Common Objects in Context](https://cocodataset.org/#overview)
