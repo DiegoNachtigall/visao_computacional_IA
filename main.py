@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 # Caminhos dos arquivos
-ARQUIVO_VIDEO = 'videos/nature.mp4'  # Substitua pelo caminho do seu vídeo ao vivo
+ARQUIVO_VIDEO = 'videos/nature.mp4'  # Substitua pelo caminho do seu vídeo
 ARQUIVO_MODELO = 'models/frozen_inference_graph.pb'  # Modelo treinado
 ARQUIVO_CFG = 'models/ssd_mobilenet_v2_coco.pbtxt'  # Configuração do modelo
 ARQUIVO_LABELS = 'models/coco_labels.txt'  # Arquivo com as classes
