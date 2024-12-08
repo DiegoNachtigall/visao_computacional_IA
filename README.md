@@ -1,10 +1,17 @@
 # Projeto de Visão Computacional para Detecção de Animais Selvagens
 
-Projeto desenvolvido para capturar imagens de animais selvagens em ambientes ao ar livre, utilizando visão computacional e modelos de detecção de objetos.
+Projeto criado para disciplina Fundamentos de Inteligência Artificial (FIA) - Graduação. Prof. Pablo De Chiaro
+
+## Integrantes
+
+- [Diego Nachtigall](https://www.github.com/DiegoNachtigall)
+- [Débora Carvalho](https://github.com/debsscc)
+- [Pedro Bilhalva](https://github.com/Bilhalv)
+
 
 ## Objetivo do Projeto
 
-O objetivo deste projeto é realizar a detecção de animais selvagens em vídeos ao vivo ou gravações de câmeras de vigilância ao ar livre. O sistema utiliza um modelo de deep learning (SSD MobileNet) para identificar animais específicos (como elefantes, cervos, ursos, zebras, e leões) e, ao detectar um animal, uma foto é capturada e salva automaticamente. O código foi ajustado para tirar apenas uma foto por minuto, evitando capturas repetidas de animais em sequência.
+O objetivo deste projeto é realizar a detecção de animais selvagens em vídeos ao vivo ou gravações de câmeras de vigilância ao ar livre. O sistema utiliza um modelo de deep learning (SSD MobileNet) para identificar animais específicos (como elefantes, cervos, ursos, zebras, e leões) e, ao detectar um animal, uma foto é capturada e salva automaticamente. O código foi ajustado para tirar apenas uma foto a cada meio minuto, evitando capturas repetidas de animais em sequência.
 
 ## Configuração do Ambiente Virtual
 

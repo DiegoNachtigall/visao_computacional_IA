@@ -72,7 +72,7 @@ def main():
                         
                         # Verifica o tempo desde a última foto
                         tempo_atual = time.time()
-                        if tempo_atual - ultima_foto_tempo >= 30:  # Verifica se 60 segundos se passaram
+                        if tempo_atual - ultima_foto_tempo >= 30:  # Verifica se 30 segundos se passaram
                             tirar_foto(frame, contador_fotos)
                             contador_fotos += 1
                             ultima_foto_tempo = tempo_atual
